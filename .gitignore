@@ -1,0 +1,9 @@
+# 临时/系统杂项
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+*.log
+
+# 本地安装测试残留(勿入库)
+install-test/
