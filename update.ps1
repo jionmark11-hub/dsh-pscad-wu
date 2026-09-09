@@ -1,4 +1,4 @@
-# update.ps1 — dah-PSCAD-WU 更新脚本(已安装过的机器)
+﻿# update.ps1 — dah-PSCAD-WU 更新脚本(已安装过的机器)
 # 用法: powershell -ExecutionPolicy Bypass -File .\update.ps1
 # 等效: git -C "$HOME\.dsh\.agent-presets\dah-pscad-wu" pull
 

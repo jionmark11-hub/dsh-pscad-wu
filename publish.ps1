@@ -1,4 +1,4 @@
-# publish.ps1 — 作者端首次发布:把本地仓库推到 GitHub
+﻿# publish.ps1 — 作者端首次发布:把本地仓库推到 GitHub
 # 用法(在你自己的 PowerShell 里,联网环境):
 #   powershell -ExecutionPolicy Bypass -File .\publish.ps1 -RepoUrl https://github.com/<你的用户名>/dah-pscad-wu.git
 #

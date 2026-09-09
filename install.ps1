@@ -1,4 +1,4 @@
-# install.ps1 — dah-PSCAD-WU 一键安装/更新脚本
+﻿# install.ps1 — dah-PSCAD-WU 一键安装/更新脚本
 # 用法(在任意装有 Git 的 Windows 电脑的 PowerShell 里):
 #   irm https://raw.githubusercontent.com/<YOUR_GITHUB_USER>/dah-pscad-wu/main/install.ps1 | iex
 # 或本地:
