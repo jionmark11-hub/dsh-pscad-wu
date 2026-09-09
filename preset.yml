@@ -1,3 +1,3 @@
-name: dah-PSCAD-WU
+name: DSH-PSCAD-WU
 description: PSCAD/EMTDC 电力系统仿真自动化专家预设。内置经实测验证的 mhi.pscad 自动化方法、元件库模型知识(开关/变压器/线路/电机/MMC-HVDC)、数值验证方法论,以及 ESS 储能与 LCC-HVDC 工程技能。将本目录放入任意电脑的 <dshHome>/.agent-presets/ 即可在预设选择器中使用;训练会话沉淀的新技能以新 SKILL.md 形式并入 skills/ 后重新部署即完成更新。
 order: 20

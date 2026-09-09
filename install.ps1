@@ -1,10 +1,10 @@
-﻿# install.ps1 — dah-PSCAD-WU 一键安装/更新脚本
+﻿# install.ps1 — DSH-PSCAD-WU 一键安装/更新脚本
 # 用法(在任意装有 Git 的 Windows 电脑的 PowerShell 里):
-#   irm https://raw.githubusercontent.com/<YOUR_GITHUB_USER>/dah-pscad-wu/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/<YOUR_GITHUB_USER>/dsh-pscad-wu/main/install.ps1 | iex
 # 或本地:
 #   powershell -ExecutionPolicy Bypass -File .\install.ps1
 #
-# 行为: 没装过 -> 克隆到 <dshHome>\.agent-presets\dah-pscad-wu
+# 行为: 没装过 -> 克隆到 <dshHome>\.agent-presets\dsh-pscad-wu
 #        已装过(git 仓库) -> 拉取更新
 #        目录存在但不是 git 仓库 -> 报错, 提示加 -Force 覆盖
 # 参数: -InstallRoot 覆盖安装根目录(默认 $HOME\.dsh\.agent-presets)
@@ -17,14 +17,14 @@ param(
 )
 
 # ===== 仓库地址(创建 GitHub 仓库后改成你自己的,再 push 一次即可) =====
-$RepoUrl = 'https://github.com/jionmark11-hub/-dsh-pscad-wu.git'
+$RepoUrl = 'https://github.com/jionmark11-hub/dsh-pscad-wu.git'
 # ========================================================================
 
 $ErrorActionPreference = 'Stop'
-$dst = Join-Path $InstallRoot 'dah-pscad-wu'
+$dst = Join-Path $InstallRoot 'dsh-pscad-wu'
 
 Write-Host ''
-Write-Host '== dah-PSCAD-WU installer ==' -ForegroundColor Cyan
+Write-Host '== DSH-PSCAD-WU installer ==' -ForegroundColor Cyan
 Write-Host ("   repo : {0}" -f $RepoUrl)
 Write-Host ("   dest : {0}" -f $dst)
 Write-Host ''
@@ -46,7 +46,7 @@ if (Test-Path $dst) {
             git -C $dst pull
             Write-Host ''
             Write-Host ('✔ 更新完成: {0}' -f $dst) -ForegroundColor Green
-            Write-Host '重启 DSH 后,新会话选择 dah-PSCAD-WU 即使用最新技能。' -ForegroundColor Green
+            Write-Host '重启 DSH 后,新会话选择 DSH-PSCAD-WU 即使用最新技能。' -ForegroundColor Green
             exit 0
         }
     } else {
@@ -65,5 +65,5 @@ if ($LASTEXITCODE -ne 0) { throw 'git clone 失败,请检查仓库地址与网�
 
 Write-Host ''
 Write-Host ('✔ 安装完成: {0}' -f $dst) -ForegroundColor Green
-Write-Host '下一步: 重启 DSH -> 新建会话 -> 预设选择器选 dah-PSCAD-WU。' -ForegroundColor Green
+Write-Host '下一步: 重启 DSH -> 新建会话 -> 预设选择器选 DSH-PSCAD-WU。' -ForegroundColor Green
 Write-Host ''

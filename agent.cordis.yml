@@ -1,4 +1,4 @@
-# dah-PSCAD-WU —— PSCAD/EMTDC 电力系统仿真自动化专家预设(AGENT-PLANE 组合)。
+# DSH-PSCAD-WU —— PSCAD/EMTDC 电力系统仿真自动化专家预设(AGENT-PLANE 组合)。
 #
 # 母版:官方 `standard` 预设(完整编码 Agent)。相对 standard 只改了 persona 文本,
 # 其余行与分组原样保留,因此凡 standard 能解析的包本预设同样能解析。

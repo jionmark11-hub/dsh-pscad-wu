@@ -1,9 +1,9 @@
 ﻿# publish.ps1 — 作者端首次发布:把本地仓库推到 GitHub
 # 用法(在你自己的 PowerShell 里,联网环境):
-#   powershell -ExecutionPolicy Bypass -File .\publish.ps1 -RepoUrl https://github.com/<你的用户名>/dah-pscad-wu.git
+#   powershell -ExecutionPolicy Bypass -File .\publish.ps1 -RepoUrl https://github.com/<你的用户名>/dsh-pscad-wu.git
 #
 # 前提:
-#   1. 已在 github.com 网页上创建好一个【空】仓库(不要勾选 Add README),名字建议 dah-pscad-wu
+#   1. 已在 github.com 网页上创建好一个【空】仓库(不要勾选 Add README),名字建议 dsh-pscad-wu
 #   2. push 时若弹出 Git Credential Manager 登录窗,用你的 GitHub 账号登录一次即可
 # 说明: 本脚本不存储任何凭据,交给 Windows 凭据管理器(Git Credential Manager)处理。
 
@@ -40,6 +40,6 @@ Write-Host '  或直接执行下面两条推送这次修改:' -ForegroundColor Y
 Write-Host ("  git -C `"{0}`" add install.ps1; git -C `"{0}`" commit -m `"set canonical repo url`"; git -C `"{0}`" push" -f $src) -ForegroundColor Yellow
 Write-Host ''
 Write-Host '之后其他电脑即可一键安装:' -ForegroundColor Green
-Write-Host ("  git clone {0} `"`$HOME\.dsh\.agent-presets\dah-pscad-wu`"" -f $RepoUrl) -ForegroundColor Green
+Write-Host ("  git clone {0} `"`$HOME\.dsh\.agent-presets\dsh-pscad-wu`"" -f $RepoUrl) -ForegroundColor Green
 Write-Host ("  或  irm {0}/raw/main/install.ps1 | iex" -f ($RepoUrl -replace '\.git$','')) -ForegroundColor Green
 Write-Host ''

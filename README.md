@@ -1,4 +1,4 @@
-# dah-PSCAD-WU — PSCAD/EMTDC 仿真自动化专家预设
+# DSH-PSCAD-WU — PSCAD/EMTDC 仿真自动化专家预设
 
 一个 DSH **agent preset(会话预设)**:把训练对话中实测验证的 PSCAD 使用技能打包成
 "人设 + 组合 + 技能 + 示例",让任意电脑的 DSH 都能以官方预设机制使用,并能随后续
@@ -7,7 +7,7 @@
 ## 目录结构
 
 ```
-dah-pscad-wu/
+dsh-pscad-wu/
 ├── preset.yml                 # 显示名/简介(预设选择器显示)
 ├── agent.cordis.yml           # 组合:以官方 standard 为母版 + PSCAD 专家人设
 ├── README.md                  # 本文件:部署/使用/更新工作流
@@ -23,10 +23,10 @@ dah-pscad-wu/
 
 ## 在任意电脑上部署(官方预设机制)
 
-1. 把整个 `dah-pscad-wu` 目录(可打包 zip 或经 git 同步)放到目标机 DSH 用户目录的预设根:
-   - Windows:`C:\Users\<用户名>\.dsh\.agent-presets\dah-pscad-wu\`
+1. 把整个 `dsh-pscad-wu` 目录(可打包 zip 或经 git 同步)放到目标机 DSH 用户目录的预设根:
+   - Windows:`C:\Users\<用户名>\.dsh\.agent-presets\dsh-pscad-wu\`
    - 与 DSH 自带的 standard/minimal/cordis 平级共存,互不影响。
-2. 重启 DSH(或刷新),新建会话时在预设选择器中选择 **dah-PSCAD-WU**。
+2. 重启 DSH(或刷新),新建会话时在预设选择器中选择 **DSH-PSCAD-WU**。
    若选择器里该预设显示为 broken,会同时给出原因行——通常是目标机 DSH 版本缺失
    组合里某 `@deepseek-ai/dsh-*` 包,升级/对齐版本即可。
 3. 目标机第一次使用前,按 `skills/pscad-automation/SKILL.md` 第 1 节核对环境
@@ -46,13 +46,13 @@ dah-pscad-wu/
 
 ## 如何持续训练并更新(核心工作流)
 
-1. **训练**:起一个 dah-PSCAD-WU 会话,像以前一样让它实测新功能/新领域并验证
+1. **训练**:起一个 DSH-PSCAD-WU 会话,像以前一样让它实测新功能/新领域并验证
    (构建 0 错误 + 可核对数据),产出新的笔记/脚本(放工作区即可)。
 2. **沉淀**(训练会话收尾时让 agent 做,或在此会话做):
    - 新主题 → 新建 `skills/<新主题>/SKILL.md`(浓缩:用途 / 方法·参数 / 验证判据 / 踩坑);
    - 旧主题新增内容 → 修订对应 SKILL.md 相应小节;
    - 可复跑示例脚本加入 `examples/`,原始记录入 `docs/source-notes/`。
-3. **发布**:把更新后的整个目录同步到各机 `.agent-presets/dah-pscad-wu/`
+3. **发布**:把更新后的整个目录同步到各机 `.agent-presets/dsh-pscad-wu/`
    (建议先删除旧目录再放入,保证无残留文件)。
 4. **生效细节**:DSH 按 `agent.cordis.yml` 的变更判定"新一代"——只改 skills 文件时,
    新会话可能仍用旧组装。更新技能后**顺带小改 `agent.cordis.yml`(如加一行版本注释)**
@@ -67,20 +67,20 @@ dah-pscad-wu/
 
 ## 从 GitHub 安装 / 更新(一行命令)
 
-仓库地址:`https://github.com/jionmark11-hub/-dsh-pscad-wu`(公开仓库,克隆无需登录)
+仓库地址:`https://github.com/jionmark11-hub/dsh-pscad-wu`(公开仓库,克隆无需登录)
 
 **安装(首次,任意装有 Git 的 Windows 电脑 PowerShell):**
 ```powershell
-git clone https://github.com/jionmark11-hub/-dsh-pscad-wu.git "$HOME\.dsh\.agent-presets\dah-pscad-wu"
+git clone https://github.com/jionmark11-hub/dsh-pscad-wu.git "$HOME\.dsh\.agent-presets\dsh-pscad-wu"
 ```
 或一条脚本式安装(自动建目录;已装过则拉更新):
 ```powershell
-irm https://raw.githubusercontent.com/jionmark11-hub/-dsh-pscad-wu/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/jionmark11-hub/dsh-pscad-wu/main/install.ps1 | iex
 ```
 
 **更新(已安装机器):**
 ```powershell
-git -C "$HOME\.dsh\.agent-presets\dah-pscad-wu" pull
+git -C "$HOME\.dsh\.agent-presets\dsh-pscad-wu" pull
 ```
 
-装完/更新完 → 重启 DSH → 新会话选择 dah-PSCAD-WU。
+装完/更新完 → 重启 DSH → 新会话选择 DSH-PSCAD-WU。
