@@ -17,7 +17,7 @@ param(
 )
 
 # ===== 仓库地址(创建 GitHub 仓库后改成你自己的,再 push 一次即可) =====
-$RepoUrl = 'https://github.com/<YOUR_GITHUB_USER>/dah-pscad-wu.git'
+$RepoUrl = 'https://github.com/jionmark11-hub/-dsh-pscad-wu.git'
 # ========================================================================
 
 $ErrorActionPreference = 'Stop'

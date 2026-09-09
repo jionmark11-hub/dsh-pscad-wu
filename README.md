@@ -64,3 +64,23 @@ dah-pscad-wu/
 - 预设的权限恰等于其组合内插件的权限(与 standard 同级:shell/文件/网络按宿主策略),
   不放松沙箱与审批。
 - `agent.cordis.yml` 是被挂载文件,会话不会写回它;所有"写预设"只发生在上述发布流程。
+
+## 从 GitHub 安装 / 更新(一行命令)
+
+仓库地址:`https://github.com/jionmark11-hub/-dsh-pscad-wu`(公开仓库,克隆无需登录)
+
+**安装(首次,任意装有 Git 的 Windows 电脑 PowerShell):**
+```powershell
+git clone https://github.com/jionmark11-hub/-dsh-pscad-wu.git "$HOME\.dsh\.agent-presets\dah-pscad-wu"
+```
+或一条脚本式安装(自动建目录;已装过则拉更新):
+```powershell
+irm https://raw.githubusercontent.com/jionmark11-hub/-dsh-pscad-wu/main/install.ps1 | iex
+```
+
+**更新(已安装机器):**
+```powershell
+git -C "$HOME\.dsh\.agent-presets\dah-pscad-wu" pull
+```
+
+装完/更新完 → 重启 DSH → 新会话选择 dah-PSCAD-WU。
