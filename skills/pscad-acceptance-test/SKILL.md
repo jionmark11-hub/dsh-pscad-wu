@@ -20,10 +20,11 @@ description: DSH-PSCAD-WU 预设的验收与回归流程:预设完整性自检(�
 
 ## 第 0 级 · 预设完整性自检(只读,不启动 PSCAD)
 目的:先确认技能真的会被发现——这里历史上出过两次严重缺陷(组合缺 `customSkillDirs`;SKILL.md 缺 frontmatter)。
-1. 看本会话系统提示里的 `<available_skills>`,应包含 6 个技能:
-   `pscad-automation`、`pscad-model-library`、`pscad-verification`、`ess-storage-project`、
-   `lcc-hvdc-project`、`pscad-acceptance-test`。
-   > 维护:新增/删除技能时,同步改这份清单。
+1. **自洽比对(无需手工维护数量)**:求出下面两个集合并**必须完全一致(不多不少)**:
+   - 磁盘清单:用文件工具列出 `<预设目录>/skills/` 下的子目录(每个都应含 SKILL.md);
+   - 目录清单:从本会话 `<available_skills>` 中挑出属于本预设的技能(与磁盘清单同名者)。
+   参考(截至 v0.3.1 共 6 个,仅作提示、不作判定依据):pscad-automation / pscad-model-library /
+   pscad-verification / ess-storage-project / lcc-hvdc-project / pscad-acceptance-test。
 2. 缺失时的定位顺序:
    - **一个都没有** → 查 `agent.cordis.yml` 里 `skill-filesystem` 行是否有
      `customSkillDirs` + `!!js ... new URL('skills/', baseUrl)`(技能提供方**不扫描预设目录**);
@@ -73,4 +74,4 @@ description: DSH-PSCAD-WU 预设的验收与回归流程:预设完整性自检(�
 
 ## 维护说明
 - 新增检查项就往对应级别加条目;新的"期望基准值"写进第 4 级并注明机器与日期。
-- 技能数量/名称变化时,同步第 0 级的清单。
+- 第 0 级用「磁盘清单 vs 会话目录」自洽比对:新增/删除技能时无需改本文件。
