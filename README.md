@@ -84,3 +84,23 @@ git -C "$HOME\.dsh\.agent-presets\dsh-pscad-wu" pull
 ```
 
 装完/更新完 → 重启 DSH → 新会话选择 DSH-PSCAD-WU。
+
+## 维护须知:技能被发现的三个必要条件(踩过坑,别删)
+
+1. **`skills/<名字>/SKILL.md` 必须有 YAML frontmatter**,且 `name` 必填、必须与目录名一致(kebab-case),`description` 必填。
+   缺少或不合法时,DHS 会**静默跳过**该技能(只在日志里给警告),会话里看不到任何提示。
+2. **`agent.cordis.yml` 里 `skill-filesystem` 行必须带 `customSkillDirs` 配置**(用 `baseUrl` 指向预设自己的 `skills/`):
+   ```yaml
+   - id: skill-filesystem
+     name: '@deepseek-ai/dsh-skill-filesystem'
+     config:
+       customSkillDirs:
+         - !!js "process.getBuiltinModule('node:url').fileURLToPath(new URL('skills/', baseUrl))"
+   ```
+   技能提供方默认只扫 `<项目根>/.dsh/skills`、`.agents/skills`、`<dshHome>/skills` 等根,**不扫预设目录**;
+   官方 standard 预设不带技能所以那行没有配置,照搬它就等于技能永远不生效。
+3. **技能文件改动不算"组装变更"**:只改 `skills/` 时,新会话可能仍用旧代际——顺带小改 `agent.cordis.yml`
+   (如版本注释)或重启 DSH 才会切换。
+
+> 自查方法:新建会话后看系统提示中的 `<available_skills>` 列表是否出现本预设的技能;
+> 或把 `skills/<名字>` 临时拷到 `<工作区>/.dsh/skills/` 下,当前会话的技能目录会立刻刷新并列出它(验证通过后删除)。

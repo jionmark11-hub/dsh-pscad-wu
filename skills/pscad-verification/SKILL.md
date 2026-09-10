@@ -1,3 +1,8 @@
+---
+name: pscad-verification
+description: 仿真结果数值验证方法论:.out 解析容错、稳态三段式核对、FFT 与谐波/纹波判据、矩阵开关事件计数体检、量纲与测量点根因排序。Use when judging whether a PSCAD run is correct or when turning simulation results into a verifiable table.
+---
+
 # PSCAD 仿真结果数值验证方法论
 
 > 训练对话的硬规矩:任何模型/修改必须以"可核对的数据或截图"收尾,并与理论对应。

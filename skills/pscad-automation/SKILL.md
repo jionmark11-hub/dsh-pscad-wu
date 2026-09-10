@@ -1,3 +1,8 @@
+---
+name: pscad-automation
+description: 用 Python 官方 API mhi.pscad 驱动 PSCAD 5 的完整自动化方法:环境核对、对象模型与 API 速查、标准建模工作流、布线几何规则、15 条实测踩坑与长任务纪律。Use when a task drives PSCAD from scripts (launch, create_case, wire, build, run, read output, capture GUI) or when diagnosing PSCAD build errors.
+---
+
 # PSCAD 自动化建模与运行(mhi.pscad)
 
 > 训练来源:2026-08 于 F:\ESS 的多轮实测对话。内容全部来自"最小复现 + 对照官方示例/CIGRE 生成代码"验证过的脚本(demo*.py 序列),而非手册摘抄。

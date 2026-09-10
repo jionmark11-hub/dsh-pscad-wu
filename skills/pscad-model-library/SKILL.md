@@ -1,3 +1,8 @@
+---
+name: pscad-model-library
+description: PSCAD 主库元件与七大实测领域的模型知识:电力电子开关与 SPWM、变压器、输电线路、电机、多机与自定义信号、MMC/HVDC 与 CIGRE 基准、仿真集与快照效率工具,含参数表、端口语义、实测坑位与验证数据。Use when choosing or diagnosing PSCAD component parameters, port semantics, or expected model behaviour.
+---
+
 # PSCAD 元件库模型知识(七大实测领域)
 
 > 内容提炼自 `docs/source-notes/PSCAD学习笔记.md`(2026-08 逐模块"最小模型+实测验证+写入笔记"产出,全部 ✅)。

@@ -1,3 +1,8 @@
+---
+name: lcc-hvdc-project
+description: LCC-HVDC 换流器建模与并网工程案例:12 脉动拓扑、CIGRE 基准参数、g6p200_2 与 xfmr-3p2w 端口语义、直流纹波诊断、黑盒 LCC39 接入 IEEE39。Use when modelling line-commutated converters, HVDC links, or integrating an LCC module into a large AC system.
+---
+
 # LCC-HVDC 换流器建模与并网(IEEE39 接入)工程案例
 
 > 覆盖:单端 12 脉动 LCC 整流器(ess_lcc)→ CIGRE 基准对照 → 黑盒 LCC39 模块接入 IEEE 39 节点(ieee39_lcc)。

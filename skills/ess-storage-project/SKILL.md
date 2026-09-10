@@ -1,3 +1,8 @@
+---
+name: ess-storage-project
+description: ESS 储能并网工程案例(受控电流源 VSC + ess_ctl 控制器):模型结构、11 个控制输入、GUI 与脚本两种改参数方式、观察面板与四类标准实验、调优历程。Use when working on the ESS/storage converter PSCAD models or their grid-side P/Q/V control.
+---
+
 # ESS 储能并网工程案例(受控电流源 VSC)
 
 > 工程背景:60kV 电网 + 储能变流器(受控电流源方案),交付单文件 `ess_full.pscx`(组件定义已嵌入,打开即用)。

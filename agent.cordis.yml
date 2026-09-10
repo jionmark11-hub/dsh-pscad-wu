@@ -74,10 +74,16 @@
 # ── skills ──────────────────────────────────────────────────────────────────
 
 # skill 注册表在宿主并按 scope 分层;这两行注册进本 preset 层。
-# skill-filesystem 会发现本预设目录 skills/<技能名>/SKILL.md,经 tool-skill 提供
-# 目录与加载——因此本预设沉淀的 PSCAD 技能会出现在会话的可用技能清单里。
+# 关键:skill-filesystem 默认只扫 <projectRoot>/.dsh/skills、.agents/skills、
+# <dshHome>/skills 等根,**不扫预设目录**;预设自带的技能必须靠 customSkillDirs
+# 显式指过去。baseUrl 是加载器给组合文件的自身目录 URL,因此该根随预设安装位置
+# 自适应(与官方 cordis 预设同款写法)。缺了这段,skills/ 里的 SKILL.md 不会被发现,
+# 会话只能靠人肉读文件。
 - id: skill-filesystem
   name: '@deepseek-ai/dsh-skill-filesystem'
+  config:
+    customSkillDirs:
+      - !!js "process.getBuiltinModule('node:url').fileURLToPath(new URL('skills/', baseUrl))"
 
 - id: tool-skill
   name: '@deepseek-ai/dsh-tool-skill'
